@@ -11,7 +11,8 @@ const server = http.createServer((req,res)=>{
             if(err){
                 res.end("data not found")
             }else{
-                res.end(data)
+                const db=JSON.parse(data)
+                res.end(JSON.stringify(db.products))
             }
         })
     }else if(req.url=="/user"){
@@ -19,7 +20,8 @@ const server = http.createServer((req,res)=>{
             if(err){
                 res.end("data not found")
             }else{
-                res.end(data)
+                const db=JSON.parse(data)
+                res.end(JSON.stringify(db.user))
             }
         })
     }
