@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 
-const fs = require("fs")
+const fs = require("fs");
+const { send } = require('process');
 
 app.use(express.json())
+  
 
 app.get("/home",(req,res)=>{
     fs.readFile("./db.json","utf-8",(err,data)=>{
@@ -42,36 +44,31 @@ app.patch("/editproduct/:id",(req,res)=>{
     const { id } = req.params;
     fs.readFile("./db.json","utf-8",(err,data)=>{
         if(err){
-            res.send(err);
+            res.send(err)
         }else{
             const productdata = JSON.parse(data);
-            const index = productdata.findIndex((el)=> el.id == id);
+            const index = productdata.findIndex((el)=> el.id == id)
 
             if(index != -1){
-                productdata[index] = { ...productdata[index], ...req.body };
+                productdata[index] = { ...productdata[index], ...req.body }
 
                 fs.writeFile("./db.json", JSON.stringify(productdata), (err) => {
                     if(err){
-                        res.send(err);
+                        res.send(err)
                     }else{
-                        res.send("Data Edited ssuccessfully");
+                        res.send("Data Edited ssuccessfully")
                     }
-                });
+                })
             }else{
                 res.send("Data not found")
             }
         } 
     });
-});
+})
 
 app.put("/updateproduct/:id",(req,res)=>{
     const id = req.params.id
-    const title = req.body.title
-    const price = req.body.price
-    const description = req.body.description
-    const category = req.body.category
-    const image = req.body.image
-
+   
     fs.readFile("./db.json","utf-8",(err,data)=>{
         if(err){
             res.send(err);
@@ -81,15 +78,7 @@ app.put("/updateproduct/:id",(req,res)=>{
 
             if(index != -1){
                 
-                productdata[index] = { ...productdata[index], ...req.body };
-
-                    // let pdata = productdata[index]
-                    // pdata.title = title
-                    // pdata.price = price
-                    // pdata.description = description
-                    // pdata.category = category
-                    // pdata.image = image
-                    // res.json(pdata)
+                productdata[index] = {id, ...req.body};
 
                     fs.writeFile("./db.json",JSON.stringify(productdata),(err)=>{
                         if(err){
@@ -99,12 +88,34 @@ app.put("/updateproduct/:id",(req,res)=>{
                         }
                     })
 
-
             }else{
                 res.send("data not found")
             }
         }
     })
+})
+
+app.delete("/deleteProduct/:id",(req,res)=>{
+    
+    const id = req.params.id
+
+    fs.readFile("./db.json","utf-8",(err,data)=>{
+        if(err){
+            res.send(err)
+        }else{
+            const productdata = JSON.parse(data)
+            const filterdata = productdata.filter((el,index)=>el.id != id) 
+            
+            fs.writeFile("./db.json",JSON.stringify(filterdata),(err,data)=>{
+                if(err){
+                    res.send(err)
+                }else{
+                    res.send("Data Deleted successfully")
+                }
+            })
+        }
+    })
+
 })
 
 app.listen(8080,()=>{

@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "title": "mens paint ",
-        "price": 2.2,
-        "description": "Your ",
+        "title": "Mens T-shirts ",
+        "price": 70.79,
+        "description": "Confertable Mens T-shirts",
         "category": "men's clothing",
         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
         "rating": {
@@ -21,18 +21,6 @@
         "rating": {
             "rate": 4.1,
             "count": 259
-        }
-    },
-    {
-        "id": 3,
-        "title": "Mens T-Shirts ",
-        "price": 20.31,
-        "description": "The Henley style round neckline includes a three-button placket.",
-        "category": "men's clothing",
-        "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-        "rating": {
-            "rate": 4.2,
-            "count": 269
         }
     }
 ]
