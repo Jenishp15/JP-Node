@@ -1,1 +1,26 @@
-[{"id":"1","title":"Snacks","price":"20","image":"./Img/snacks.webp"},{"id":2,"image":"./Img/buds.webp","title":"Buds","price":50},{"id":3,"image":"./Img/icebar.webp","title":"IceBar","price":10},{"id":"4","title":"Auli Oil","price":"99.99","image":"./Img/oil.webp"}]
+[
+    {
+        "id": "1",
+        "title": "Snacks",
+        "price": "20",
+        "image": "./Img/snacks.webp"
+    },
+    {
+        "id": 2,
+        "image": "./Img/buds.webp",
+        "title": "Buds",
+        "price": 50
+    },
+    {
+        "id": 3,
+        "image": "./Img/icebar.webp",
+        "title": "IceBar",
+        "price": 10
+    },
+    {
+        "id": "4",
+        "title": "Auli Oil",
+        "price": "99.99",
+        "image": "./Img/cycle.webp"
+    }
+]

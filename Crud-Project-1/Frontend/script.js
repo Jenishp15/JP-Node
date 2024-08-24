@@ -34,7 +34,7 @@ function card(id, image, title, price) {
     </div>`
 }
 
-// =========== Add data
+// =========== Add data // POST
 
 let product_id = document.getElementById("product-id")
 let product_title = document.getElementById("product-title")
@@ -65,7 +65,7 @@ adddata.addEventListener(("click"), (e) => {
 
 })
 
-// =========== Update data
+// =========== Update data // PUT
 
 let update_product_id = document.getElementById("update-product-id")
 let update_product_title = document.getElementById("update-product-title")
@@ -116,7 +116,7 @@ updatedata.addEventListener(("click"), () => {
         .catch((err) => console.log(err))
 })
 
-// =========== Edit Only One data
+// =========== Edit Only One data // PATCH
 
 let edit_id_product_id = document.getElementById("edit-id-product-id")
 let edit_price_product_price = document.getElementById("edit-price-product-price")
@@ -144,7 +144,7 @@ edit_price_btn.addEventListener(("click"), () => {
 
 })
 
-// =========== Delete data
+// =========== Delete data // DELETE
 
 document.addEventListener(("click"), (e) => {
     if (e.target.classList.contains("delete-btn")) {
