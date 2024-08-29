@@ -59,7 +59,7 @@ adddata.addEventListener(("click"), (e) => {
         },
         body: JSON.stringify(obj)
     })
-        .then((res) => res.JSON())
+        // .then((res) => res.JSON())
         .then((data) => alert("Data added successfully"))
         .catch((err) => console.log(err))
 
@@ -111,7 +111,7 @@ updatedata.addEventListener(("click"), () => {
         },
         body: JSON.stringify(obj)
     })
-        .then((res) => { res.JSON() })
+        // .then((res) => { res.JSON() })
         .then((data) => alert("Data updateed successfully"))
         .catch((err) => console.log(err))
 })
@@ -138,8 +138,8 @@ edit_price_btn.addEventListener(("click"), () => {
         },
         body: JSON.stringify(obj)
     })
-        .then((res) => res.JSON())
-        .then((data) => alert("Data updateed successfully"))
+        // .then((res) => res.JSON())
+        .then((data) => alert("Price updateed successfully"))
         .catch((err) => console.log(err))
 
 })
@@ -161,7 +161,6 @@ document.addEventListener(("click"), (e) => {
                 'Content-Type': 'application/json',
             },
         })
-            .then((res) => res.JSON())
             .then((data) => alert("Data Deleted successfully"))
             .catch((err) => console.log(err))
     }
