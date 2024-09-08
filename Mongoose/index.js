@@ -1,13 +1,16 @@
-const mongoose = require('mongoose')
+const express = require("express")
+const {connection} = require("./db")
 
-const main = () => {
+const app=express()
 
-    mongoose.connect('mongodb://127.0.0.1:27017/home').then((res)=>{
-        console.log(res)
-        console.log("connected to DB")
-    }).catch((err)=>{
-        console.log(err)
-    })
-}
 
-main()
+app.listen(8080,async()=>{
+    try {
+        await connection;
+        console.log("server is running")
+        console.log("============= Connected to db =============")
+        
+    } catch (error) {
+        
+    }
+})

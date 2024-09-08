@@ -4,11 +4,8 @@ const app = express();
 const fs = require("fs");
 const cors = require('cors');
 
-
 app.use(express.json())
 app.use(cors())
-
-
 
 app.get("/home",(req,res)=>{
     fs.readFile("./db.json","utf-8",(err,data)=>{

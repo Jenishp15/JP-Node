@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="container main-menu">
+        <div class="row">
+            <div class=" col-3 logo ">
+                <h1>company</h1>
+            </div>
+            <nav class="col-6">
+                <ul class="menu-ul">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="login.html">Log In</a></li>
+                </ul>
+            </nav>
+            <div class="col-3">
+                <button>Log Out</button>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+
+        <div class="container-fluid">
+            <form id="login" class="form">
+                <div class="header">
+                    <h1>Login</h1>
+                    <p>Please enter Username and password:</p>
+                </div>
+                <div class="login-content">
+                    <div class="input-group">
+                        <input type="text" id="login-username" name="username" placeholder="Username">
+                        <span id="logininUserError"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="login-password" name="password" placeholder="Password ">
+                        <span id="PasswordError"></span>
+                    </div>
+                    <button type="submit">LOGIN</button>
+    
+                    <p>New customer ? <a href="signup.html"> Create an account</a></p>
+                </div>
+            </form>
+    
+        </div>
+
+        <hr>
+        
+        <div class="container">
+            <div class="footer">
+                <h5>Thanks for visiting</h5>
+            </div>
+        </div>
+
+        <script src="./login.js"></script>
+
+</body>
+</html>
