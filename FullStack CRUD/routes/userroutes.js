@@ -6,9 +6,7 @@ const UserRouter = express.Router()
 UserRouter.post("/register",async(req,res)=>{
     const {name,email,password} = req.body
     try {
-        const singleuser = Usermodel({
-            name,email,password
-        })
+        const singleuser = Usermodel({name,email,password})
         await singleuser.save()
         res.status(201).json({message:"user created successfully"})   
     } catch (error) {

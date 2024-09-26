@@ -7,8 +7,11 @@ const ConatctRouter = require("./router/conatctrouter")
 const env= require("dotenv")
 env.config()
 
+
+app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
+app.set('view engine', 'ejs');
 app.use("/product",ProductRouter)
 app.use("/contact",ConatctRouter)
 

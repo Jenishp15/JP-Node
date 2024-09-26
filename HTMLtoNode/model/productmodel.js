@@ -7,6 +7,6 @@ const Productschema =new mongoose.Schema({
     image:String,
 },{ versionKey: false })
 
-const Productmodel = mongoose.model("user",Productschema)
+const Productmodel = mongoose.model("product",Productschema)
 
 module.exports = Productmodel

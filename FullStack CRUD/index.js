@@ -5,10 +5,11 @@ const UserRouter = require("./routes/userroutes")
 const dotenv = require("dotenv")
 dotenv.config()
 
-app.use("user",UserRouter)
+app.use(express.json())
+app.use("/user",UserRouter)
 
 
-app.listen(process.env.PORT||3000,async()=>{
+app.listen(process.env.PORT,async()=>{
     try {
         await connection
         console.log("connected to db")

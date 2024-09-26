@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+        header {
+            background-color: lightskyblue;
+            padding: 10px 5px;
+        }
+
+        footer {
+            margin-top: 5%;
+            text-align: center;
+            font-size: 20px;
+            background-color: aqua;
+            padding: 10px 5px;
+        }
+
+        section {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            margin: 0px 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+
+        .product {
+            border: 1px solid black;
+        }
+
+        .product li {
+            text-align: left;
+            margin: 2px 0px;
+            font-size: 25px;
+        }
+
+        .main-product {
+            padding: 0px 10px;
+        }
+
+        .product-display {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="product">Product</a></li>
+        </nav>
+
+        </header>
+
+    <section>
+        Welcome to Product page
+
+        <div class="container">
+            <div class="product-display row">
+
+                <% productdata.forEach((d)=>{ %>
+
+                    <ul class="col-6 product">
+                        <li><img src=" <%= d.image %> " alt="" height="200px" width="200px"></li>
+                        <div class="main-product">
+                            <li>Product name : <%= d.name %>
+                            </li>
+                            <li> Price : <%= d.price %>
+                            </li>
+                            <li>Description : <%= d.description %>
+                            </li>
+                        </div>
+                    </ul>
+
+                    <% }) %>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <h4>Thank you for visiting website</h4>
+    </footer>
+</body>
+
+</html>

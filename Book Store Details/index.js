@@ -6,10 +6,10 @@ const env = require("dotenv")
 env.config()
 
 app.use(express.json())
+
 app.use("/book",bookRoutes)
 
 app.listen(process.env.PORT || 3000,async ()=>{
-    
     try {
         await connection
         console.log("server is running")
