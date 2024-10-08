@@ -12,7 +12,7 @@ const AuthMiddleware = async (req, res, next) => {
         const user = await UserModel.findOne({ email })
 
         if (!user) {
-            return res.status.json({ message: "User not found" })
+            return res.status(400).json({ message: "User not found" })
         } else {
             req.user = user
             next()
