@@ -2,7 +2,6 @@ const Usermodel = require("../models/usermodel")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
 
-
 const env = require("dotenv")
 env.config()
 
