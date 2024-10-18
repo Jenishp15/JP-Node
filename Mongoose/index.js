@@ -11,6 +11,6 @@ app.listen(8080,async()=>{
         console.log("============= Connected to db =============")
         
     } catch (error) {
-        
+        console.log(error)
     }
 })

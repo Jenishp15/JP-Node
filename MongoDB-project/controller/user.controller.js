@@ -87,8 +87,6 @@ const deleteuser = async (req, res) => {
         res.status(400).json({message:error.message})
     }
 
-
-    // res.send(id)
 }
 
 module.exports = {getuserdata,userregistraion,userlogin,deleteuser,updateuser}

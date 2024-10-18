@@ -14,8 +14,6 @@ const UserRegister = async (req, res) => {
                 res.send("error to hash pass")
             }
             Usermodel.create({username, email, password:hash,role})
-            // var RegToken = jwt.sign({ username, email, password:hash, role}, process.env.SECRETE_KEY)
-            // res.cookie("RegToken",RegToken).status(200).json({ message: "Account created successfully" })
             res.status(200).json({ message: "Account created successfully" })
         })
 
