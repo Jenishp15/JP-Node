@@ -8,7 +8,7 @@ const UserRouter = express()
 
 UserRouter.post("/signup",Signup)
 UserRouter.post("/verify",Varification)
-UserRouter.post("/signin",Signin)
+UserRouter.post("/login",Signin)
 UserRouter.post("/logout",Logout)
 UserRouter.get("/getdata/:userId",isAuth,Getuser)
 UserRouter.patch("/updatedata/:userId",isAuth,upload.single("profileImage"),Updateuser)

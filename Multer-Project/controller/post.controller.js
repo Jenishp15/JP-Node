@@ -50,4 +50,16 @@ const updatePost = async (req, res) => {
     }
 }
 
-module.exports = { CreatePost, deletePost, updatePost }
+const getpost = async (req,res) => {
+    try {
+        const posts = await PostModel.find()
+        if(!posts){
+        return res.status(400).json({ message: "Post not found"})   
+        }
+        res.status(200).json({posts})   
+    } catch (error) {
+        return res.status(400).json({ message: error.message })   
+    }
+}
+
+module.exports = { CreatePost, deletePost, updatePost, getpost }

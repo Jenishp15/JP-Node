@@ -9,7 +9,7 @@ const AuthMiddleware = async (req, res, next) => {
     try {
         const { email } = jwt.verify(token, process.env.SECRETE_KEY)
         
-        const user = await UserModel.findOne({ email })   
+        const user = await UserModel.findOne({ email })
 
         if (!user) {
             return res.status(400).json({ message: "User not found" })

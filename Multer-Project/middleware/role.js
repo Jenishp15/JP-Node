@@ -7,4 +7,4 @@ const CheckRole = (req,res,next) => {
     next();
 }
 
-module.exports = CheckRole 
+module.exports = CheckRole
